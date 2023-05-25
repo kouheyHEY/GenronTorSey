@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="script/Variables.js"></script>
+    <script type="text/javascript" src="script/genronTorSey.js"></script>
+    <link rel="stylesheet" href="css/GenronTorSey.css" type="text/css">
+    <meta charset="utf-8" http-equiv="content-type">
+</head>
+
+<body>
+    <header>
+        <h1>お手軽言論統制ツール</h1>
+        <h3>ver 1.0</h3>
+    </header>
+
+    <div class="contentArea">
+        <label for="inputStr">あなたの発言</label>
+        <textarea id="inputStr" class="targetMember"></textarea>
+        <select id="filter">
+            <option value="filter_cat">猫</option>
+            <option value="filter_dog">犬</option>
+            <option value="filter_gorilla">ゴリラ</option>
+            <option value="filter_crow">カラス</option>
+            <option value="filter_wotaku">キモータ</option>
+            <option value="filter_ronja">役割論者</option>
+        </select><br>
+        <button class="commonButton" onclick="changeInputStr()">統制</button>
+        <button class="commonButton" onclick="clearInputStr()">クリア</button>
+    </div>
+
+    <div class="contentArea">
+        <label for="outputStr">あなたの発言</label>
+        <textarea id="outputStr" class="targetMember"></textarea>
+        <button class="commonButton" onclick="copyOutputStr()" id="button_copy">コピー</button>
+        <button class="commonButton" onclick="shareAbst()">SNSで発信</button>
+        <button class="commonButton" onclick="shareDist()">SNSで詳細に発信</button>
+    </div>
+</body>
+
+</html>
