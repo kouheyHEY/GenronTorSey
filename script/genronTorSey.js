@@ -62,6 +62,10 @@ function shareDist() {
 function changeStr(_inputStr, _filter) {
     // デバッグ用
     return "テストダヨーン：" + _inputStr + ",フィルタ：" + _filter;
+    // 入力の長さを取得する
+    let inputLen = _inputStr.length;
+
+    // 入力を文字の種類ごとに変換する
 }
 
 /**
