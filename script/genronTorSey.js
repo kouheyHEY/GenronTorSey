@@ -58,14 +58,29 @@ function shareDist() {
  * フィルタによって文字列を変換する
  * @param {string} _inputStr    変換対象文字列
  * @param {string} _filter      変換用フィルタ
+ * @returns                     変換後文字列
  */
 function changeStr(_inputStr, _filter) {
-    // デバッグ用
-    return "テストダヨーン：" + _inputStr + ",フィルタ：" + _filter;
+    // 変換後文字列
+    let outputStr;
+    // 変換方法は要検討
+
     // 入力の長さを取得する
     let inputLen = _inputStr.length;
 
-    // 入力を文字の種類ごとに変換する
+    // フィルタ用配列を取得する
+    let filterStrList = FILTER_MAP[_filter];
+
+    for (let i = 0; i < inputLen; i++) {
+        // [1 - フィルタ用配列の長さ]の範囲で乱数1を生成する
+        // [0 - フィルタ用配列の長さ]の範囲で乱数2を生成する
+        // フィルタ用配列からランダムに文字列を抽出する
+        // 変換後文字列に、ランダムに取り出した文字列を追加する
+        // 変換後文字列が変換前文字列の長さと同等になったら変換を終了する
+    }
+
+    // デバッグ用
+    return "テストダヨーン：" + _inputStr + ",フィルタ：" + _filter;
 }
 
 /**
