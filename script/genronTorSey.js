@@ -73,7 +73,12 @@ function changeStr(_inputStr, _filter) {
 
     for (let i = 0; i < inputLen; i++) {
         // [1 - フィルタ用配列の長さ]の範囲で乱数1を生成する
-        // [0 - フィルタ用配列の長さ]の範囲で乱数2を生成する
+        let filterStrLen = Math.floor(Math.random() * filterStrList.length) + 1;
+
+        // フィルタ用文字列を決定する
+        let filterStrIdx = Math.floor(Math.random() * filterStrList[filterStrLen].length);
+        let filterStr = filterStrList[filterStrLen][filterStrIdx];
+        
         // フィルタ用配列からランダムに文字列を抽出する
         // 変換後文字列に、ランダムに取り出した文字列を追加する
         // 変換後文字列が変換前文字列の長さと同等になったら変換を終了する
