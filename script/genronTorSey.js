@@ -72,8 +72,13 @@ function changeStr(_inputStr, _filter) {
     let filterStrList = FILTER_MAP[_filter];
 
     for (let i = 0; i < inputLen; i++) {
-        // [1 - フィルタ用配列の長さ]の範囲で乱数1を生成する
-        let filterStrLen = Math.floor(Math.random() * filterStrList.length) + 1;
+        // 未フィルタ文字列の長さを取得する
+        let notFilteredLen = inputLen - outputStr.length;
+        // フィルタ用文字列の長さの上限を取得する
+        let filterLenMax = Math.min(filterStrList.length, notFilteredLen);
+
+        // [1 - フィルタ用文字列の長さ]の範囲で乱数1を生成する
+        let filterStrLen = Math.floor(Math.random() * filterLenMax) + 1;
 
         // フィルタ用文字列を決定する
         let filterStrIdx = Math.floor(Math.random() * filterStrList[filterStrLen].length);
@@ -89,7 +94,9 @@ function changeStr(_inputStr, _filter) {
     }
 
     // デバッグ用
-    return "テストダヨーン：" + _inputStr + ",フィルタ：" + _filter;
+    // return "テストダヨーン：" + _inputStr + ",フィルタ：" + _filter;
+    // 変換後文字列を返す
+    return outputStr;
 }
 
 /**
